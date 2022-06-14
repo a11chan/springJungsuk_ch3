@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id = "car" class="com.fastcampus.ch3.Car" >-->
+<!--        <property name="color" value="red"/>-->
+<!--        <property name="oil" value="100"/> &lt;!&ndash;int여도 xml에서는 따옴표로 씀, 스프링이 자동전환&ndash;&gt;-->
+<!--        <property name="engine" ref="engine"/>-->
+<!--        <property name="doors">-->
+<!--            <array value-type="com.fastcampus.ch3.Door">-->
+<!--                <ref bean="door"></ref> &lt;!&ndash;참조변수이므로 value가 아닌 ref&ndash;&gt;-->
+<!--                <ref bean="door"></ref>-->
+<!--            </array>-->
+<!--        </property>-->
+<!--    </bean>-->
+    <bean id = "car" class="com.fastcampus.ch3.Car" >
+        <constructor-arg name="color" value="red"/>
+        <constructor-arg name="oil" value="100"/> <!--int여도 xml에서는 따옴표로 씀, 스프링이 자동전환-->
+        <constructor-arg name="engine" ref="engine"/>
+        <constructor-arg name="doors">
+            <array value-type="com.fastcampus.ch3.Door">
+                <ref bean="door"></ref> <!--참조변수이므로 value가 아닌 ref-->
+                <ref bean="door"></ref>
+            </array>
+        </constructor-arg>
+    </bean>
+    <bean id = "engine" class="com.fastcampus.ch3.Engine" ></bean>
+    <bean id = "door" class="com.fastcampus.ch3.Door" scope="prototype"></bean>
+</beans>
