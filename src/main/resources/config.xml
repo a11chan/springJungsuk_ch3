@@ -3,10 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="com.fastcampus.ch3">
+
+    <context:component-scan base-package="com.fastcampus.ch3.diTest">
         <context:exclude-filter type="regex" expression="com.fastcampus.ch3.diCopy*.*"/>
     </context:component-scan>
-<!-- <context:annotation-config></context:annotation-config>
-자바코드에서 에너테이션 사용시 정의필요하나 context:component-scan 태그가 자동으로 처리-->
 
 </beans>
